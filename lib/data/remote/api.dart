@@ -1,0 +1,24 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter_star_wars/model/movies_wrapper.dart';
+
+class Api {
+
+  static final String _baseUrl = "https://swapi.co/api/";
+
+  Future<MoviesWrapper> fetchMovies(http.Client client) async {
+    final response = await client.get(_baseUrl + 'films');
+    return _parseMovies(response.body);
+  }
+
+  MoviesWrapper _parseMovies(String responseBody) {
+    final parsed = json.decode(responseBody);
+    print(parsed['results']);
+    MoviesWrapper wrapper = new MoviesWrapper.fromJson(parsed);
+    return wrapper;
+//    print(parsed['results']);
+//    return parsed.map<MoviesWrapper>((json) => MoviesWrapper.fromJson(json));
+  }
+}
