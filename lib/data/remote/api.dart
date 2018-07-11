@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_star_wars/model/movies_wrapper.dart';
 
@@ -18,7 +17,5 @@ class Api {
     print(parsed['results']);
     MoviesWrapper wrapper = new MoviesWrapper.fromJson(parsed);
     return wrapper;
-//    print(parsed['results']);
-//    return parsed.map<MoviesWrapper>((json) => MoviesWrapper.fromJson(json));
   }
 }

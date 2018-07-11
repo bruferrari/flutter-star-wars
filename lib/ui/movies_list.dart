@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_star_wars/data/remote/api.dart';
-import 'package:flutter_star_wars/model/movie.dart';
 import 'package:flutter_star_wars/model/movies_wrapper.dart';
 import 'package:http/http.dart' as http;
 
@@ -46,6 +45,7 @@ class MoviesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: wrapper.movies.length,
       itemBuilder: (context, index) {
          return new ListTile(
            title: new Text(wrapper.movies[index].title));
