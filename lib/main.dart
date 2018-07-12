@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ui/movies_list.dart';
+import 'package:flutter_star_wars/ui/movies/movies_list.dart';
 
 void main() => runApp(new MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: new MoviesList(title: 'Star Wars Demo'),
     );

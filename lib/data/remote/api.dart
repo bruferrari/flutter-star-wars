@@ -15,7 +15,6 @@ class Api {
   MoviesWrapper _parseMovies(String responseBody) {
     final parsed = json.decode(responseBody);
     print(parsed['results']);
-    MoviesWrapper wrapper = new MoviesWrapper.fromJson(parsed);
-    return wrapper;
+    return MoviesWrapper.fromJson(parsed);
   }
 }
