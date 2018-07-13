@@ -14,20 +14,32 @@ class MovieContent extends StatelessWidget {
 
   Widget _buildContent(BuildContext context) {
     return Container(
+      constraints: BoxConstraints.expand(),
       padding: const EdgeInsets.all(32.0),
       child: Column(
         children: <Widget>[
           Text(
-              movie.releaseDate,
+            'Episode: ' + movie.episodeId.toString(),
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16.0),
+          ),
+          Text(
+              'Release Date: '  + movie.releaseDate,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16.0),
             ),
           Text(
-            movie.producer,
+            'Director: ' + movie.director,
             textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16.0),
+          ),
+          Text(
+            'Producers: ' + movie.producer,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16.0),
           ),
           Container(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.only(top: 16.0),
             child: Text(
               movie.openingCrawl,
               textAlign: TextAlign.center,

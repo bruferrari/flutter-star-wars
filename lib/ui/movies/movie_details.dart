@@ -15,7 +15,6 @@ class _MovieDetailsState extends State<MovieDetails> {
 
   @override
   Widget build(BuildContext context) {
-    print('AQUI' + widget.movie.title);
 
     return Scaffold(
         appBar: AppBar(
